@@ -11,7 +11,22 @@
     "url": "https://github.com/dojo/cli-build-widget/issues"
   },
   "license": "BSD-3-Clause",
-  "main": "main.js",
+  "type": "commonjs",
+  "types": "dist/cjs/src/main.d.ts",
+  "main": "dist/cjs/src/main.js",
+  "module": "dist/cjs/src/main.js",
+  "browser": "dist/cjs/src/main.js",
+  "unpkg": "dist/cjs/src/main.js",
+  "files": [
+    "dist/**"
+  ],
+  "exports": {
+    ".": {
+      "types": "./dist/cjs/src/index.d.ts",
+      "import": "./dist/cjs/src/index.ts",
+      "require": "./dist/cjs/src/index.js"
+    }
+  },
   "repository": {
     "type": "git",
     "url": "https://github.com/dojo/cli-build-widget.git"
@@ -54,7 +69,7 @@
     ]
   },
   "devDependencies": {
-    "@dojo/cli": "~8.0.0",
+    "@dojo/cli": "8.0.0",
     "@dojo/scripts": "~4.0.2",
     "@types/clean-webpack-plugin": "0.1.2",
     "@types/execa": "0.8.0",
@@ -96,8 +111,8 @@
     "typescript": "3.4.5"
   },
   "dependencies": {
-    "@dojo/framework": "~8.0.0",
-    "@dojo/webpack-contrib": "~8.0.0",
+    "@dojo/framework": "workspace:*",
+    "@dojo/webpack-contrib": "workspace:*",
     "chalk": "2.4.1",
     "clean-webpack-plugin": "1.0.0",
     "cli-columns": "3.1.2",
@@ -131,7 +146,7 @@
     "tslint-loader": "3.5.4",
     "typed-css-modules": "0.3.1",
     "umd-compat-loader": "2.1.1",
-    "webpack": "4.25.1",
+    "webpack": "4.47.0",
     "webpack-bundle-analyzer": "3.0.4",
     "webpack-chunk-hash": "0.6.0",
     "webpack-dev-middleware": "3.4.0",
